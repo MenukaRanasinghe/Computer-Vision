@@ -1,4 +1,4 @@
-🌿 Plant Disease Detection
+# 🌿 Plant Disease Detection
 
   This project demonstrates a web application that utilizes deep learning models to identify plant diseases from leaf images. Built with Flask and TensorFlow, it serves as a practical tool for farmers, researchers, and enthusiasts to diagnose plant health issues efficiently.
 
