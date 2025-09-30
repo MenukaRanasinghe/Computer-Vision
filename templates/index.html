@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+</head>
+<body>
+    <h1>Plant Disease Detection</h1>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput" accept="image/*" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const resultText = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                resultText.innerText = `Prediction: ${data.prediction}`;
+            } catch (err) {
+                console.error(err);
+                resultText.innerText = 'Error predicting the image';
+            }
+        });
+    </script>
+</body>
+</html>
