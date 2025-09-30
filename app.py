@@ -52,8 +52,10 @@ def predict():
     # Choose which model to use (example: CNN)
     prediction = np.argmax(cnn_model.predict(img), axis=1)[0]  
     predicted_class = class_names[prediction]
+    clean_label = predicted_class.replace("__", " ").replace("_", " ")
 
-    return jsonify({'prediction': predicted_class})
+
+    return jsonify({'prediction': clean_label})
 
 if __name__ == "__main__":
     app.run(debug=True)
