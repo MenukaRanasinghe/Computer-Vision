@@ -4,40 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Disease Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .upload-box {
+            background: #fff;
+            padding: 25px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input[type="file"] {
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+
+        #uploaded-img {
+            margin-top: 20px;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #prediction {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #c0392b;
+        }
+    </style>
 </head>
 <body>
     <h1>Plant Disease Detection</h1>
 
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" name="file" id="fileInput" accept="image/*" required>
-        <button type="submit">Predict</button>
-    </form>
+    <div class="upload-box">
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input" accept="image/*" required><br>
+            <button type="submit">Predict</button>
+        </form>
 
-    <h2 id="result"></h2>
+        <img id="uploaded-img" src="#" alt="" style="display: none;">
+        <div id="prediction"></div>
+    </div>
 
     <script>
-        const form = document.getElementById('uploadForm');
-        const resultText = document.getElementById('result');
+        const form = document.getElementById('upload-form');
+        const fileInput = document.getElementById('file-input');
+        const uploadedImg = document.getElementById('uploaded-img');
+        const predictionDiv = document.getElementById('prediction');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const fileInput = document.getElementById('fileInput');
             const file = fileInput.files[0];
+            if (!file) return;
+
+            // Show uploaded image
+            uploadedImg.src = URL.createObjectURL(file);
+            uploadedImg.style.display = 'block';
+            predictionDiv.innerText = 'Predicting...';
+
             const formData = new FormData();
             formData.append('file', file);
 
-            try {
-                const response = await fetch('/predict', {
-                    method: 'POST',
-                    body: formData
-                });
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
 
-                const data = await response.json();
-                resultText.innerText = `Prediction: ${data.prediction}`;
-            } catch (err) {
-                console.error(err);
-                resultText.innerText = 'Error predicting the image';
+            const data = await response.json();
+            if (data.error) {
+                predictionDiv.innerText = data.error;
+            } else {
+                predictionDiv.innerText = `Prediction: ${data.prediction}`;
             }
         });
     </script>
