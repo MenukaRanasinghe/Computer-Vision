@@ -1,37 +1,37 @@
 # 🌿 Plant Disease Detection
 
-  This project demonstrates a web application that utilizes deep learning models to identify plant diseases from leaf images. Built with Flask and TensorFlow, it serves as a practical tool for farmers, researchers, and enthusiasts to diagnose plant health issues efficiently.
+  This project demonstrates a web application that utilizes deep learning models to identify plant diseases from leaf images. Built with Flask and TensorFlow, it serves as a practical tool for farmers,      researchers, and enthusiasts to diagnose plant health issues efficiently.
 
-##📌 Project Overview
+## 📌 Project Overview
 
   The application employs two deep learning models:
-    -CNN Model: A Convolutional Neural Network trained to classify plant diseases.
-    -Transfer Learning Model: A model leveraging pre-trained networks to enhance classification accuracy.
+    * CNN Model: A Convolutional Neural Network trained to classify plant diseases.
+    * Transfer Learning Model: A model leveraging pre-trained networks to enhance classification accuracy.
   These models were trained on the PlantVillage Dataset, which contains images of healthy and diseased leaves from various plant species.
 
-##🧠 Dataset
+## 🧠 Dataset
 
   The dataset used is the [PlantVillage Dataset] (https://www.kaggle.com/datasets/emmarex/plantdisease?resource=download), comprising over 87,000 RGB images categorized into 38 classes, including:
-    -Bell Pepper (healthy and diseased)
-    -Potato (Early Blight, Late Blight, healthy)
-    -Tomato (various diseases and healthy)
+    * Bell Pepper (healthy and diseased)
+    * Potato (Early Blight, Late Blight, healthy)
+    * Tomato (various diseases and healthy)
   This diverse dataset enables the models to learn and predict a wide range of plant diseases.
 
-##⚙️ Technologies Used
+## ⚙️ Technologies Used
 
-  -Backend: Python, Flask
-  -Deep Learning Framework: TensorFlow, Keras
-  -Frontend: HTML, CSS, JavaScript
-  -Model Formats: .keras (saved models)
+  * Backend: Python, Flask
+  * Deep Learning Framework: TensorFlow, Keras
+  * Frontend: HTML, CSS, JavaScript
+  * Model Formats: .keras (saved models)
 
-##🚀 Features
+## 🚀 Features
 
-  -Upload a leaf image through the web interface.
-  -Predict the plant species and its disease status.
-  -Receive predictions from both CNN and Transfer Learning models.
-  -View the uploaded image along with the prediction result.
+  * Upload a leaf image through the web interface.
+  * Predict the plant species and its disease status.
+  * Receive predictions from both CNN and Transfer Learning models.
+  * View the uploaded image along with the prediction result.
 
-##🛠️ Setup Instructions
+## 🛠️ Setup Instructions
 
   1. Clone the repository:
     git clone https://github.com/MenukaRanasinghe/Computer-Vision.git
@@ -47,16 +47,16 @@
 
   5. Open your browser and navigate to http://127.0.0.1:5000/ to use the application.
 
-##📷 Example Interface
+## 📷 Example Interface
 
   Above: Screenshot of the Leaf Disease Detection Flask App interface.
 
-##📄 License
+## 📄 License
 
   This project is licensed under the MIT License.
 
-##📌 Acknowledgments
+## 📌 Acknowledgments
 
-  -PlantVillage Dataset for providing the dataset.
-  -TensorFlow and Keras for the deep learning frameworks.
-  -Flask for the web application framework.
+  * PlantVillage Dataset for providing the dataset.
+  * TensorFlow and Keras for the deep learning frameworks.
+  * Flask for the web application framework.
