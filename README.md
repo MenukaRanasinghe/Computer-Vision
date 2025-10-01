@@ -13,7 +13,7 @@
 
 ## 🧠 Dataset
 
-  The dataset used is the [PlantVillage Dataset] (https://www.kaggle.com/datasets/emmarex/plantdisease?resource=download), comprising over 87,000 RGB images categorized into 38 classes, including:
+  The dataset used is the [PlantVillage Dataset] (https://www.kaggle.com/datasets/emmarex/plantdisease?resource=download), comprising over 20,000+ RGB images categorized into 15 classes, including:
   
 - **Bell Pepper**: healthy and diseased
 - **Potato**: Early Blight, Late Blight, healthy
