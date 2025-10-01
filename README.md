@@ -5,16 +5,16 @@
 ## 📌 Project Overview
 
   The application employs two deep learning models:
-    * CNN Model: A Convolutional Neural Network trained to classify plant diseases.
-    * Transfer Learning Model: A model leveraging pre-trained networks to enhance classification accuracy.
+    **CNN Model**: A Convolutional Neural Network trained to classify plant diseases.
+    **Transfer Learning Model**: A model leveraging pre-trained networks to enhance classification accuracy.
   These models were trained on the PlantVillage Dataset, which contains images of healthy and diseased leaves from various plant species.
 
 ## 🧠 Dataset
 
   The dataset used is the [PlantVillage Dataset] (https://www.kaggle.com/datasets/emmarex/plantdisease?resource=download), comprising over 87,000 RGB images categorized into 38 classes, including:
-    * Bell Pepper (healthy and diseased)
-    * Potato (Early Blight, Late Blight, healthy)
-    * Tomato (various diseases and healthy)
+    **Bell Pepper**: healthy and diseased
+    **Potato**: Early Blight, Late Blight, healthy
+    **Tomato**: various diseases and healthy
   This diverse dataset enables the models to learn and predict a wide range of plant diseases.
 
 ## ⚙️ Technologies Used
@@ -34,22 +34,34 @@
 ## 🛠️ Setup Instructions
 
   1. Clone the repository:
+```bash
     git clone https://github.com/MenukaRanasinghe/Computer-Vision.git
     cd plant-disease-detection
+```
 
-  2. Install dependencies:
+  3. Install dependencies:
+```bash
     pip install -r requirements.txt
+```
 
-  3. Place your trained models (Plant_Disease_Model1.keras and Plant_Disease_Model2.keras) in the project directory.
+  5. Place your trained models (Plant_Disease_Model1.keras and Plant_Disease_Model2.keras) in the project directory.
 
-  4. Run the Flask application:
+  6. Run the Flask application:
+```bash
     python app.py
+```
 
-  5. Open your browser and navigate to http://127.0.0.1:5000/ to use the application.
+  8. Open your browser and navigate to http://127.0.0.1:5000/ to use the application.
 
 ## 📷 Example Interface
 
-  Above: Screenshot of the Leaf Disease Detection Flask App interface.
+Below are some screenshots from the Plant Disease Detection application:
+
+<p align="center">
+  <img src="Screenshot1.png" alt="Upload Page" width="250"/>
+  <img src="Screenshot2.png" alt="Prediction Result - Healthy Leaf" width="250"/>
+  <img src="Screenshot3.png" alt="Prediction Result - Diseased Leaf" width="250"/>
+</p>
 
 ## 📄 License
 
