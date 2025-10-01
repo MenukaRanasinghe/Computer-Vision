@@ -5,16 +5,20 @@
 ## 📌 Project Overview
 
   The application employs two deep learning models:
-    **CNN Model**: A Convolutional Neural Network trained to classify plant diseases.
-    **Transfer Learning Model**: A model leveraging pre-trained networks to enhance classification accuracy.
+  
+- **CNN Model**: A Convolutional Neural Network trained to classify plant diseases.
+- **Transfer Learning Model**: A model leveraging pre-trained networks to enhance classification accuracy.
+  
   These models were trained on the PlantVillage Dataset, which contains images of healthy and diseased leaves from various plant species.
 
 ## 🧠 Dataset
 
   The dataset used is the [PlantVillage Dataset] (https://www.kaggle.com/datasets/emmarex/plantdisease?resource=download), comprising over 87,000 RGB images categorized into 38 classes, including:
-    **Bell Pepper**: healthy and diseased
-    **Potato**: Early Blight, Late Blight, healthy
-    **Tomato**: various diseases and healthy
+  
+- **Bell Pepper**: healthy and diseased
+- **Potato**: Early Blight, Late Blight, healthy
+- **Tomato**: various diseases and healthy
+    
   This diverse dataset enables the models to learn and predict a wide range of plant diseases.
 
 ## ⚙️ Technologies Used
@@ -57,10 +61,10 @@
 
 Below are some screenshots from the Plant Disease Detection application:
 
-<p align="center">
-  <img src="Screenshot1.png" alt="Upload Page" width="250"/>
-  <img src="Screenshot2.png" alt="Prediction Result - Healthy Leaf" width="250"/>
-  <img src="Screenshot3.png" alt="Prediction Result - Diseased Leaf" width="250"/>
+<p float="left">
+  <img src="Screenshot1.png" width="200" height="200" />
+  <img src="Screenshot2.png" width="200" height="200" />
+  <img src="Screenshot3.png" width="200" height="200" />
 </p>
 
 ## 📄 License
